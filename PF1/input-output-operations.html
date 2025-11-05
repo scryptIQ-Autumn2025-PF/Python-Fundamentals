@@ -696,6 +696,14 @@ print(f&quot;Your age of {age} years old, has been typecasted from a string into
             </div>
         </div>
         
+        <div class="code-area">
+            <div class="code-container code-editor">
+                <textarea id="code-cell-22"></textarea>
+            </div>
+            <button id="run-code-cell-22" class="run-button">Run Code</button>
+            <div id="code-cell-22-output" class="output"></div>
+        </div>
+        
                     </div>
                 </div>
             </div>
@@ -777,7 +785,7 @@ print(f&quot;Your age of {age} years old, has been typecasted from a string into
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-22">expression_level = 1.0 # Gene expression level in arbitrary units (float).
+                <textarea id="code-cell-23">expression_level = 1.0 # Gene expression level in arbitrary units (float).
 
 is_expressed = bool(expression_level) # Typecast to boolean.
 
@@ -787,8 +795,8 @@ print(&quot;Is the gene expressed?&quot;, is_expressed)
 missing_value = None # Handling missing values
 print(&quot;Missing value is treated as:&quot;, bool(missing_value))</textarea>
             </div>
-            <button id="run-code-cell-22" class="run-button">Run Code</button>
-            <div id="code-cell-22-output" class="output"></div>
+            <button id="run-code-cell-23" class="run-button">Run Code</button>
+            <div id="code-cell-23-output" class="output"></div>
         </div>
         
         <div class="info-box tip-box">
@@ -857,75 +865,75 @@ print(&quot;Missing value is treated as:&quot;, bool(missing_value))</textarea>
 </table><p>Observe the output of the code in the cells below, to see each of these operators in action:</p>
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-23"># Let&#x27;s begin by defining two variables to use in our calculations:
+                <textarea id="code-cell-24"># Let&#x27;s begin by defining two variables to use in our calculations:
 
 a = 12
 b = 5</textarea>
             </div>
-            <div id="code-cell-23-output" class="output" style="display: none;"></div>
+            <div id="code-cell-24-output" class="output" style="display: none;"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-24"># Addition:
+                <textarea id="code-cell-25"># Addition:
 
 a + b</textarea>
-            </div>
-            <div id="code-cell-24-output" class="output"></div>
-        </div>
-        
-        <div class="code-area">
-            <div class="code-container code-fixed">
-                <textarea id="code-cell-25"># Subtraction:
-
-a - b</textarea>
             </div>
             <div id="code-cell-25-output" class="output"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-26"># Multiplication:
+                <textarea id="code-cell-26"># Subtraction:
 
-a * b</textarea>
+a - b</textarea>
             </div>
             <div id="code-cell-26-output" class="output"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-27"># Division:
+                <textarea id="code-cell-27"># Multiplication:
 
-a / b</textarea>
+a * b</textarea>
             </div>
             <div id="code-cell-27-output" class="output"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-28"># Floor division:
+                <textarea id="code-cell-28"># Division:
 
-a // b</textarea>
+a / b</textarea>
             </div>
             <div id="code-cell-28-output" class="output"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-29"># Modulus (remainder):
+                <textarea id="code-cell-29"># Floor division:
 
-a % b</textarea>
+a // b</textarea>
             </div>
             <div id="code-cell-29-output" class="output"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-30"># Exponentiation:
+                <textarea id="code-cell-30"># Modulus (remainder):
+
+a % b</textarea>
+            </div>
+            <div id="code-cell-30-output" class="output"></div>
+        </div>
+        
+        <div class="code-area">
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-31"># Exponentiation:
 
 a ** b</textarea>
             </div>
-            <div id="code-cell-30-output" class="output"></div>
+            <div id="code-cell-31-output" class="output"></div>
         </div>
         
                     </div>
@@ -949,12 +957,12 @@ a ** b</textarea>
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-31"># You can edit these variables
+                <textarea id="code-cell-32"># You can edit these variables
 x = 11
 y = 4</textarea>
             </div>
-            <button id="run-code-cell-31" class="run-button">Run Code</button>
-            <div id="code-cell-31-output" class="output"></div>
+            <button id="run-code-cell-32" class="run-button">Run Code</button>
+            <div id="code-cell-32-output" class="output"></div>
         </div>
         
                     </div>
@@ -968,7 +976,7 @@ y = 4</textarea>
                         <h4>The `abs()` function:</h4><p>Alongside operators, Python also provides another useful built-in function for working with numbers. This is the <code>abs()</code> function, which returns the <strong>absolute value</strong> of a number. The absolute value represents the number’s distance from zero, with any <strong>negative sign removed</strong>.<br><br>Run the code in the cell below to understand how this works:</p>
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-32"># Absolute difference in cell count
+                <textarea id="code-cell-33"># Absolute difference in cell count
 
 initial_cells = 5000
 final_cells = 3800
@@ -978,8 +986,8 @@ change = final_cells - initial_cells
 print(f&quot;Change:                 {change}&quot;)
 print(f&quot;Absolute difference:     {abs(change)}&quot;)    # absolute difference = 1200</textarea>
             </div>
-            <button id="run-code-cell-32" class="run-button">Run Code</button>
-            <div id="code-cell-32-output" class="output"></div>
+            <button id="run-code-cell-33" class="run-button">Run Code</button>
+            <div id="code-cell-33-output" class="output"></div>
         </div>
         <p>In this example, you can see how <code>abs()</code> is particularly useful when dealing with changes, <strong>where only the magnitude of the difference matters</strong>, irrespective of whether the difference represents an <em>increase</em> or <em>decrease</em>.<br><br>In the example code cell, above, a drop in white blood cell count of <code>-1200</code> and a rise of <code>1200</code> both have the same absolute change in value. And in such situations, using <code>abs()</code> can be a useful way of standardising lots of output.</p>
                     </div>

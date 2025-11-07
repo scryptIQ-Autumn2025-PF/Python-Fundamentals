@@ -126,7 +126,17 @@
                 <div class="module-body">
                     <div class="module-section">
                         <h3>Input and Output (I/O) Operations</h3>
-                        <h4>What are I/O operations?</h4><p>In computer science, <strong>input/output (I/O)</strong> refers to the communication between a computer program and the outside world. This might mean displaying the result of a computation on the screen, reading data from a file, prompting a user to enter their name, or receiving input from a device like a microscope, sequencer or camera. These interactions are crucial in scientific programming, where we often need to load datasets, prompt for experiment parameters, and print results.<br><br>Python provides two simple but powerful built-in functions to handle basic I/O:<br><ul class="nested-list"><li><code>print()</code> -- used to send output to the screen</li><br><li><code>input()</code> -- used to receive user input</li></ul>These two functions make it possible to build interactive programs, pipelines and command-line tools.</p><h4>What is a function in Python?</h4><p>Before we delve further, let&#x27;s get to grips with what a <strong>function</strong> is, and what it does, in Python. A function is a <strong>named block of code that carries out a specific task</strong> whenever you ask it to. We have just introduced two of the most commonly used functions: <code>print()</code> and <code>input()</code>. Both are built-in functions, which means they are provided by Python itself, and are not written or defined by the user, or imported from a specific module or package; they are a mainstay of your plain Python installation. We will explore modules and packages further in <strong>PF3</strong>.<br><br>Although they are both functions, <code>print()</code> and <code>input()</code> do actually behave quite differently to the majority of other functions. For instance, the <code>print()</code> function takes information you give it and sends it outward to the screen. By contrast, the <code>input()</code> function waits for information to come in from the user and then returns that text back into your program. This illustrates two important points about functions:<br><ul class="nested-list"><li>Some functions act mainly to produce an effect (like displaying text on the screen).</li><br><li>Others are designed to produce a value that can be stored and used in further calculations.</li></ul>This is the surface-level definition of what Python functions are, and is all we need to know, at this point in the course. The specifics of function writing and defining are covered in later lessons, but the remainder of this lesson will now focus on <code>print()</code> and <code>input()</code>.</p>
+                        <h4>What are I/O operations?</h4><p>In computer science, <strong>input/output (I/O)</strong> refers to the communication between a computer program and the outside world. This might mean displaying the result of a computation on the screen, reading data from a file, prompting a user to enter their name, or receiving input from a device like a microscope, sequencer or camera. These interactions are crucial in scientific programming, where we often need to load datasets, prompt for experiment parameters, and print results.<br><br>Python provides two simple but powerful built-in functions to handle basic I/O:<br><ul class="nested-list"><li><code>print()</code> -- used to send output to the screen</li><br><li><code>input()</code> -- used to receive user input</li></ul>These two functions make it possible to build interactive programs, pipelines and command-line tools.</p>
+        <div class="image-placeholder">
+            <div class="placeholder-content">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="5,3 19,12 5,21"/>
+                </svg>
+                <p><strong>Video unavailable:</strong></p>
+                <p><small>No URL provided</small></p>
+            </div>
+        </div>
+        <h4>What is a function in Python?</h4><p>Before we delve further, let&#x27;s get to grips with what a <strong>function</strong> is, and what it does, in Python. A function is a <strong>named block of code that carries out a specific task</strong> whenever you ask it to. We have just introduced two of the most commonly used functions: <code>print()</code> and <code>input()</code>. Both are built-in functions, which means they are provided by Python itself, and are not written or defined by the user, or imported from a specific module or package; they are a mainstay of your plain Python installation. We will explore modules and packages further in <strong>PF3</strong>.<br><br>Although they are both functions, <code>print()</code> and <code>input()</code> do actually behave quite differently to the majority of other functions. For instance, the <code>print()</code> function takes information you give it and sends it outward to the screen. By contrast, the <code>input()</code> function waits for information to come in from the user and then returns that text back into your program. This illustrates two important points about functions:<br><ul class="nested-list"><li>Some functions act mainly to produce an effect (like displaying text on the screen).</li><br><li>Others are designed to produce a value that can be stored and used in further calculations.</li></ul>This is the surface-level definition of what Python functions are, and is all we need to know, at this point in the course. The specifics of function writing and defining are covered in later lessons, but the remainder of this lesson will now focus on <code>print()</code> and <code>input()</code>.</p>
         <div class="info-box key-terms-box">
             <div class="box-title">
                 <span class="box-icon"></span>
@@ -145,18 +155,7 @@
                 <div class="module-body">
                     <div class="module-section">
                         <h3>Print</h3>
-                        <h4>The `print()` function:</h4><p>As described above, the <code>print()</code> function is used to send textual output to the console or notebook. This also uniquely makes it the programmer&#x27;s primary and most universal tool for <strong>seeing what&#x27;s happening</strong> inside a script: whether that&#x27;s displaying simple alphanumeric characters as a message, displaying the result of a calculation or operation, or even reporting errors. As we progress, we can even use <code>print()</code> to display the contents of data structures, such as variables, lists or dictionaries.<br><br>The tutorial video below runs a summary overview of this section of the lesson that covers the <code>print()</code> function. Everyone learns differently, so please feel free to watch it either before or after reading this section of the lesson.</p>
-        <div class="video-container">
-            <iframe 
-                src="https://www.youtube.com/embed/AwPiV6bSjx0"
-                width="560"
-                height="315"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-        </div>
-        <h4>Syntax:</h4><p>In order to make use of a function such as <code>print()</code> - or any other function for that matter - Python follows specific <strong>syntax</strong>. In this context, <strong>syntax</strong> refers to a set of rules that allow the <strong>Python interpreter</strong> (the part of your computer that is decoding what your Python program is trying to say and do) to translate the letters, numbers, spaces, indentations and punctuation in your Python program, into a <strong>valid instruction</strong>.<br><br>Python has broad syntactic principles that are followed by many different functions but, furthermore, each specific Python function will have syntax of its own that helps the user very specifically control how it works.<br><br>Before we dive into the various syntax of the <code>print()</code> function, run the code cell below. Its output will display beneath it, on your console (or screen).</p>
+                        <h4>The `print()` function:</h4><p>As described above, the <code>print()</code> function is used to send textual output to the console or notebook. This also uniquely makes it the programmer&#x27;s primary and most universal tool for <strong>seeing what&#x27;s happening</strong> inside a script: whether that&#x27;s displaying simple alphanumeric characters as a message, displaying the result of a calculation or operation, or even reporting errors. As we progress, we can even use <code>print()</code> to display the contents of data structures, such as variables, lists or dictionaries.</p><h4>Syntax:</h4><p>In order to make use of a function such as <code>print()</code> - or any other function for that matter - Python follows specific <strong>syntax</strong>. In this context, <strong>syntax</strong> refers to a set of rules that allow the <strong>Python interpreter</strong> (the part of your computer that is decoding what your Python program is trying to say and do) to translate the letters, numbers, spaces, indentations and punctuation in your Python program, into a <strong>valid instruction</strong>.<br><br>Python has broad syntactic principles that are followed by many different functions but, furthermore, each specific Python function will have syntax of its own that helps the user very specifically control how it works.<br><br>Before we dive into the various syntax of the <code>print()</code> function, run the code cell below. Its output will display beneath it, on your console (or screen).</p>
         <div class="info-box key-terms-box">
             <div class="box-title">
                 <span class="box-icon"></span>
@@ -615,18 +614,7 @@ print(f&quot;Test positive: {is_positive} (type: {type(is_positive)}).\n&quot;)<
                 <div class="module-body">
                     <div class="module-section">
                         <h3>The input() function</h3>
-                        <p>Converse to the <code>print()</code> function, which is used to send information <strong>out</strong> of a Python script and onto the console, the <code>input()</code> function is used to bring information <strong>in</strong>. When used, you can display a message on the console to the user, and allow them to type input in using their keyboard and - upon hitting return or enter - returns the collected input as a <strong>string</strong>.<br><br>The tutorial video below gives an overview of using the <code>input()</code> function and typecasting.</p>
-        <div class="video-container">
-            <iframe 
-                src="https://www.youtube.com/embed/_c7l5EbdQk0"
-                width="560"
-                height="315"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-        </div>
-        
+                        <p>Converse to the <code>print()</code> function, which is used to send information <strong>out</strong> of a Python script and onto the console, the <code>input()</code> function is used to bring information <strong>in</strong>. When used, you can display a message on the console to the user, and allow them to type input in using their keyboard and - upon hitting return or enter - returns the collected input as a <strong>string</strong>.</p>
         <div class="info-box note-box">
             <div class="box-title">
                 <span class="box-icon"></span>
@@ -694,14 +682,6 @@ print(f&quot;Your age of {age} years old, has been typecasted from a string into
                 <p><strong>4.</strong></p>
                 <p>Create an input that asks the user to enter their home town and save it to a variable:<ul class="nested-list"><li>Format an appropriate print statement for the given answer</li></ul></p>
             </div>
-        </div>
-        
-        <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-22"></textarea>
-            </div>
-            <button id="run-code-cell-22" class="run-button">Run Code</button>
-            <div id="code-cell-22-output" class="output"></div>
         </div>
         
                     </div>
@@ -785,7 +765,7 @@ print(f&quot;Your age of {age} years old, has been typecasted from a string into
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-23">expression_level = 1.0 # Gene expression level in arbitrary units (float).
+                <textarea id="code-cell-22">expression_level = 1.0 # Gene expression level in arbitrary units (float).
 
 is_expressed = bool(expression_level) # Typecast to boolean.
 
@@ -795,8 +775,8 @@ print(&quot;Is the gene expressed?&quot;, is_expressed)
 missing_value = None # Handling missing values
 print(&quot;Missing value is treated as:&quot;, bool(missing_value))</textarea>
             </div>
-            <button id="run-code-cell-23" class="run-button">Run Code</button>
-            <div id="code-cell-23-output" class="output"></div>
+            <button id="run-code-cell-22" class="run-button">Run Code</button>
+            <div id="code-cell-22-output" class="output"></div>
         </div>
         
         <div class="info-box tip-box">
@@ -865,75 +845,75 @@ print(&quot;Missing value is treated as:&quot;, bool(missing_value))</textarea>
 </table><p>Observe the output of the code in the cells below, to see each of these operators in action:</p>
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-24"># Let&#x27;s begin by defining two variables to use in our calculations:
+                <textarea id="code-cell-23"># Let&#x27;s begin by defining two variables to use in our calculations:
 
 a = 12
 b = 5</textarea>
             </div>
-            <div id="code-cell-24-output" class="output" style="display: none;"></div>
+            <div id="code-cell-23-output" class="output" style="display: none;"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-25"># Addition:
+                <textarea id="code-cell-24"># Addition:
 
 a + b</textarea>
+            </div>
+            <div id="code-cell-24-output" class="output"></div>
+        </div>
+        
+        <div class="code-area">
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-25"># Subtraction:
+
+a - b</textarea>
             </div>
             <div id="code-cell-25-output" class="output"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-26"># Subtraction:
+                <textarea id="code-cell-26"># Multiplication:
 
-a - b</textarea>
+a * b</textarea>
             </div>
             <div id="code-cell-26-output" class="output"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-27"># Multiplication:
+                <textarea id="code-cell-27"># Division:
 
-a * b</textarea>
+a / b</textarea>
             </div>
             <div id="code-cell-27-output" class="output"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-28"># Division:
+                <textarea id="code-cell-28"># Floor division:
 
-a / b</textarea>
+a // b</textarea>
             </div>
             <div id="code-cell-28-output" class="output"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-29"># Floor division:
+                <textarea id="code-cell-29"># Modulus (remainder):
 
-a // b</textarea>
+a % b</textarea>
             </div>
             <div id="code-cell-29-output" class="output"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-30"># Modulus (remainder):
-
-a % b</textarea>
-            </div>
-            <div id="code-cell-30-output" class="output"></div>
-        </div>
-        
-        <div class="code-area">
-            <div class="code-container code-fixed">
-                <textarea id="code-cell-31"># Exponentiation:
+                <textarea id="code-cell-30"># Exponentiation:
 
 a ** b</textarea>
             </div>
-            <div id="code-cell-31-output" class="output"></div>
+            <div id="code-cell-30-output" class="output"></div>
         </div>
         
                     </div>
@@ -957,12 +937,12 @@ a ** b</textarea>
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-32"># You can edit these variables
+                <textarea id="code-cell-31"># You can edit these variables
 x = 11
 y = 4</textarea>
             </div>
-            <button id="run-code-cell-32" class="run-button">Run Code</button>
-            <div id="code-cell-32-output" class="output"></div>
+            <button id="run-code-cell-31" class="run-button">Run Code</button>
+            <div id="code-cell-31-output" class="output"></div>
         </div>
         
                     </div>
@@ -976,7 +956,7 @@ y = 4</textarea>
                         <h4>The `abs()` function:</h4><p>Alongside operators, Python also provides another useful built-in function for working with numbers. This is the <code>abs()</code> function, which returns the <strong>absolute value</strong> of a number. The absolute value represents the number’s distance from zero, with any <strong>negative sign removed</strong>.<br><br>Run the code in the cell below to understand how this works:</p>
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-33"># Absolute difference in cell count
+                <textarea id="code-cell-32"># Absolute difference in cell count
 
 initial_cells = 5000
 final_cells = 3800
@@ -986,8 +966,8 @@ change = final_cells - initial_cells
 print(f&quot;Change:                 {change}&quot;)
 print(f&quot;Absolute difference:     {abs(change)}&quot;)    # absolute difference = 1200</textarea>
             </div>
-            <button id="run-code-cell-33" class="run-button">Run Code</button>
-            <div id="code-cell-33-output" class="output"></div>
+            <button id="run-code-cell-32" class="run-button">Run Code</button>
+            <div id="code-cell-32-output" class="output"></div>
         </div>
         <p>In this example, you can see how <code>abs()</code> is particularly useful when dealing with changes, <strong>where only the magnitude of the difference matters</strong>, irrespective of whether the difference represents an <em>increase</em> or <em>decrease</em>.<br><br>In the example code cell, above, a drop in white blood cell count of <code>-1200</code> and a rise of <code>1200</code> both have the same absolute change in value. And in such situations, using <code>abs()</code> can be a useful way of standardising lots of output.</p>
                     </div>

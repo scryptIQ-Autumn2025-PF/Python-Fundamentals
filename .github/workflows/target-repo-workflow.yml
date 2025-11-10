@@ -1,30 +1,35 @@
 name: Deploy to GitHub Pages
+
 on:
   push:
     branches: [main]
+
 permissions:
   contents: write
   pages: write
   id-token: write
+
+env:
+  PARCHMENT_TOKEN: ${{ github.actor == 'DrAdamLee' && secrets.PARCHMENTIQ_PAT_AL || secrets.PARCHMENTIQ_PAT }}
+
 concurrency:
   group: "pages"
   cancel-in-progress: false
+
 jobs:
   create-homepage:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Python-Fundamentals
         uses: actions/checkout@v4
-        with:
-          token: ${{ github.actor == 'DrAdamLee' && secrets.PARCHMENTIQ_PAT_AL || secrets.PARCHMENTIQ_PAT }}
       
       - name: Checkout parchmentIQ repository  
         uses: actions/checkout@v4
         with:
-          repository: scryptIQ-Autumn2025-PF/parchmentIQ
+          repository: ScryptIQ-ai/parchmentIQ
           ref: main
           path: parchmentiq-repo
-          token: ${{ github.actor == 'DrAdamLee' && secrets.PARCHMENTIQ_PAT_AL || secrets.PARCHMENTIQ_PAT }}
+          token: ${{ env.PARCHMENT_TOKEN }}
       
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -49,7 +54,7 @@ jobs:
       - name: Generate homepage
         run: |
           echo "Generating homepage..."
-          python3 create_homepage.py
+          python3 create_homepage.py --organisation "${{ github.repository_owner }}"
           echo "Homepage generated successfully!"
           ls -la homepage.html
           
@@ -61,6 +66,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git config --local user.name "GitHub Action"
           git add assets/ about-us.html homepage.html
           if git diff --staged --quiet; then
               echo "No changes to commit"
@@ -68,6 +74,7 @@ jobs:
               git commit -m "Update assets, about-us.html, and generate homepage from parchmentIQ [skip ci]"
               git push origin main
             fi
+
   deploy:
     needs: create-homepage
     environment:

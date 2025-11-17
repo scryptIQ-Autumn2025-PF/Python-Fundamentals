@@ -44,7 +44,7 @@
         
         <h3>Content</h3>
         <ul>
-            <li><a href="./introduction.html" class="">Introduction</a></li><li><a href="./course-registration.html">Course Registration & Lesson Releases</a></li><li><a href="./L2D-portal.html">L2D Portal & Github</a></li><li><a href="./online-materials.html">Online Materials</a></li><li><a href="./live-lectures.html">Live Lectures & Drop-in Sessions</a></li><li><a href="./course-feedback.html">Submitting course feedback</a></li><li><a href="./assignment-submission.html">Assignment submission</a></li>
+            <li><a href="./introduction.html" class="">Introduction</a></li><li><a href="./lesson-releases.html">Lesson Releases</a></li><li><a href="./L2D-portal.html">L2D Portal & Github</a></li><li><a href="./online-materials.html">Online Materials</a></li><li><a href="./live-lectures.html">Live Lectures & Drop-in Sessions</a></li><li><a href="./course-feedback.html">Submitting course feedback</a></li><li><a href="./assignment-submission.html">Assignment submission</a></li>
             <li>
                 <div class="nav-toggle active" data-target="expandable-section-7">
                     Assignment Feedback
@@ -533,6 +533,10 @@ except Exception as e:
         });
         
         console.log("All code blocks initialised successfully");
+
+        // Set flag to indicate Pyodide is fully ready
+        window.pyodideReady = true;
+        console.log("Pyodide fully ready");
         
     } catch (error) {
         console.error("Failed to initialise Pyodide:", error);

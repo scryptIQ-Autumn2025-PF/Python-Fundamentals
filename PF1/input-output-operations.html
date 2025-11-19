@@ -50,7 +50,7 @@
                     Input/Output Operations
                     <span class="toggle-icon">▼</span>
                 </div>
-                <ul class="nested-nav expanded" id="expandable-section-1"><li><a href="#introduction">Introduction</a></li><li><a href="#input-and-output--i-o--operations">Input and Output (I/O) Operations</a></li><li><a href="#print">Print</a></li><li><a href="#arguments">Arguments</a></li><li><a href="#variables--storing-data">Variables: Storing Data</a></li><li><a href="#interactive-python">Interactive Python</a></li><li><a href="#f-strings">F-strings</a></li><li><a href="#the-input---function">The input() function</a></li><li><a href="#data-types-in-python">Data types in Python</a></li><li><a href="#mathematical-operations">Mathematical Operations</a></li><li><a href="#absolute-value">Absolute value</a></li><li><a href="#summary">Summary</a></li>
+                <ul class="nested-nav expanded" id="expandable-section-1"><li><a href="#introduction">Introduction</a></li><li><a href="#input-and-output--i-o--operations">Input and Output (I/O) Operations</a></li><li><a href="#print">Print</a></li><li><a href="#arguments">Arguments</a></li><li><a href="#variables--storing-data">Variables: Storing Data</a></li><li><a href="#interactive-python">Interactive Python</a></li><li><a href="#f-strings">F-strings</a></li><li><a href="#the-input---function">The input() function</a></li><li><a href="#data-types-in-python">Data types in Python</a></li><li><a href="#type-conversion-and-typecasting">Type conversion and typecasting:</a></li><li><a href="#mathematical-operations">Mathematical Operations</a></li><li><a href="#absolute-value">Absolute value</a></li><li><a href="#summary">Summary</a></li>
                 </ul>
             </li><li><a href="./logical-operations-and-conditional-statements.html">Logical Operations and Conditional Statements</a></li><li><a href="./errors-in-python.html">Errors in Python</a></li><li><a href="./assignment.html">Assignment</a></li><li><a href="./feedback.html">Feedback</a></li>
         </ul>
@@ -772,17 +772,16 @@ print(f&quot;Your age of {age} years old, has been typecasted from a string into
 <td>Represents null or absence of value</td>
 </tr>
 </tbody>
-</table><p><br><br>Across this course, and with many biological and medical datasets, you will likely encounter almost all of the types listed, above.</p><h4>Type conversion and typecasting:</h4><p>Python allows <strong>type conversion</strong>, also known as <strong>typecasting</strong>, to change a value&#x27;s type. This is crucial when dealing with data from external sources, user input, or read-in files.<br><br>Typecasting is often necessary when the type of data you have is not the type you need for an operation. Our earlier example of the <code>input()</code> function above, explains why it could be necessary.<br><br>If you want to perform calculations with that number, you must <em>typecast</em> the string into an integer using the <code>int()</code> function, or into a floating-point (decimal) number using the <code>float()</code> function. Likewise, you can turn numbers into strings with the <code>str()</code> function, which can useful for combining numbers with text, to give customised output.</p><p>Aside from <code>str</code> and <code>int</code>, typecasting can also be important when moving between other types of data. For instance, typecasting can also come up when working with numeric data, booleans (<code>True</code> or <code>False</code>), and missing values.<br><br>As an example, you might be analysing gene expression levels, measured as floating-point (decimal) values. You may want to simplify these into a simpler expressed <em>vs.</em> not expressed binary, and one way to do this is by typecasting the values into a <strong>Boolean</strong> value of data type <code>bool</code>.<br><br>A <strong>Boolean</strong> is a data type in Python that represents one of two possible values: <code>True</code> or <code>False</code>. Booleans are used to express logical conditions — for example, whether a statement is correct, whether a comparison holds, or whether something is present or absent.<br><br>You can convert a data value into a Boolean using Python&#x27;s built-in <code>bool()</code> function. This converts a value into a Boolean (<code>True</code> or <code>False</code>), following these two simple rules:<br><ul class="nested-list"><li>Values that are <strong>non-empty</strong> or <strong>non-zero</strong> become <code>True</code>.</li><br><li>Values that are considered <strong>empty</strong> or <strong>zero</strong> become <code>False</code>. This also includes the datatype <code>None</code> given in the table above for values that are missing, which are also converted to the Boolean <code>False</code>.</li></ul>This is an implicit condition of this function. Later in this lesson we will explore <strong>conditional statements</strong> - a construct in Python used to execute a block of code depending on whether a specific condition is met, or not. In a nearly similar fasion, the <code>bool</code> function implicitly <em>evaluates</em> a value: with non-zero being converted into <code>True</code>, and zero or missing values are <code>False</code>.<br><br>In the cell below, try changing the value assigned to the variable <code>expression_level</code> and see how the <code>bool</code> function responds:</p>
-        <div class="info-box key-terms-box">
-            <div class="box-title">
-                <span class="box-icon"></span>
-                KEY TERMS
+</table><p><br><br>Across this course, and with many biological and medical datasets, you will likely encounter almost all of the types listed, above.</p>
+                    </div>
+                </div>
             </div>
-            <div class="box-content">
-                <p><strong>Data Types</strong>: Categories that define what kind of value a variable can hold and what operations can be performed on it. Python&#x27;s main built-in types include integers, floats, strings, booleans, lists, tuples, dictionaries, and sets.<br><br><strong>Typecasting</strong>: Converting a value from one data type to another, such as <code>int(&quot;42&quot;)</code> to convert a string to an integer, or <code>str(3.14)</code> to convert a float to a string.<br><br><strong>Boolean</strong>: A data type with only two possible values: <code>True</code> or <code>False</code>. Used for logical operations and conditional statements.<br><br><strong>Integers</strong>: Whole numbers without decimal points, such as <code>42</code>, <code>-7</code>, or <code>0</code>. Python integers have unlimited precision.<br><br><strong>Floats</strong>: Numbers with decimal points, such as <code>3.14</code>, <code>-0.5</code>, or <code>2.0</code>. Short for &quot;floating-point numbers&quot;.<br><br><strong>Strings</strong>: Sequences of characters enclosed in quotes, such as <code>&quot;hello&quot;</code>. Used to represent text.<br><br><strong>F-strings</strong>: Formatted string that allow embedding variables inside strings using curly braces, such as <code>f&quot;The answer is {x + y}&quot;</code>. They start with an <code>f</code> prefix before the opening quote.</p>
-            </div>
-        </div>
-        
+            
+            <div class="module-card" id="type-conversion-and-typecasting">
+                <div class="module-body">
+                    <div class="module-section">
+                        <h3>Type conversion and typecasting:</h3>
+                        <p>Python allows <strong>type conversion</strong>, also known as <strong>typecasting</strong>, to change a value&#x27;s type. This is crucial when dealing with data from external sources, user input, or read-in files.<br><br>Typecasting is often necessary when the type of data you have is not the type you need for an operation. Our earlier example of the <code>input()</code> function above, explains why it could be necessary.<br><br>If you want to perform calculations with that number, you must <em>typecast</em> the string into an integer using the <code>int()</code> function, or into a floating-point (decimal) number using the <code>float()</code> function. Likewise, you can turn numbers into strings with the <code>str()</code> function, which can useful for combining numbers with text, to give customised output.</p><p>Aside from <code>str</code> and <code>int</code>, typecasting can also be important when moving between other types of data. For instance, typecasting can also come up when working with numeric data, booleans (<code>True</code> or <code>False</code>), and missing values.<br><br>As an example, you might be analysing gene expression levels, measured as floating-point (decimal) values. You may want to simplify these into a simpler expressed <em>vs.</em> not expressed binary, and one way to do this is by typecasting the values into a <strong>Boolean</strong> value of data type <code>bool</code>.<br><br>A <strong>Boolean</strong> is a data type in Python that represents one of two possible values: <code>True</code> or <code>False</code>. Booleans are used to express logical conditions — for example, whether a statement is correct, whether a comparison holds, or whether something is present or absent.<br><br>You can convert a data value into a Boolean using Python&#x27;s built-in <code>bool()</code> function. This converts a value into a Boolean (<code>True</code> or <code>False</code>), following these two simple rules:<br><ul class="nested-list"><li>Values that are <strong>non-empty</strong> or <strong>non-zero</strong> become <code>True</code>.</li><br><li>Values that are considered <strong>empty</strong> or <strong>zero</strong> become <code>False</code>. This also includes the datatype <code>None</code> given in the table above for values that are missing, which are also converted to the Boolean <code>False</code>.</li></ul>This is an implicit condition of this function. Later in this lesson we will explore <strong>conditional statements</strong> - a construct in Python used to execute a block of code depending on whether a specific condition is met, or not. In a nearly similar fasion, the <code>bool</code> function implicitly <em>evaluates</em> a value: with non-zero being converted into <code>True</code>, and zero or missing values are <code>False</code>.<br><br>In the cell below, try changing the value assigned to the variable <code>expression_level</code> and see how the <code>bool</code> function responds:</p>
         <div class="code-area">
             <div class="code-container code-editor">
                 <textarea id="code-cell-23">expression_level = 1.0 # Gene expression level in arbitrary units (float).
@@ -797,6 +796,71 @@ print(&quot;Missing value is treated as:&quot;, bool(missing_value))</textarea>
             </div>
             <button id="run-code-cell-23" class="run-button">Run Code</button>
             <div id="code-cell-23-output" class="output"></div>
+        </div>
+        <p>Python&#x27;s built-in classes for typecasting one data type into another, will sometimes only expect to see a specific type of input. For example, the <code>float()</code> class will generate a <code>ValueError</code> if you feed it a string as input. For reference, the table below lists the various classes used for typecasting in Python, the inputs they expect, and the outputs they give:</p><table class="markdown-table">
+<thead>
+<tr>
+<th>Typecasting Class</th>
+<th>Compatible Input Data Types</th>
+<th>Resulting Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int()</code></td>
+<td>• <code>int</code>, <code>float</code> (decimal part truncated)<br>• <code>str</code> (numeric strings like <code>"123"</code>, <code>"-45"</code>)<br>• <code>bool</code> (<code>True</code> → 1, <code>False</code> → 0)</td>
+<td>Integer (<code>int</code>)</td>
+</tr>
+<tr>
+<td><code>float()</code></td>
+<td>• <code>int</code>, <code>float</code><br>• <code>str</code> (numeric strings like <code>"3.14"</code>, <code>"inf"</code>, <code>"-inf"</code>, <code>"nan"</code>)<br>• <code>bool</code> (<code>True</code> → 1.0, <code>False</code> → 0.0)</td>
+<td>Floating-point number (<code>float</code>)</td>
+</tr>
+<tr>
+<td><code>str()</code></td>
+<td>• All data types (universal converter)<br>• <code>int</code>, <code>float</code>, <code>bool</code>, <code>list</code>, <code>tuple</code>, <code>dict</code>, <code>set</code>, <code>None</code>, etc.</td>
+<td>String (<code>str</code>)</td>
+</tr>
+<tr>
+<td><code>bool()</code></td>
+<td>• All data types<br>• Returns <code>False</code> for: <code>0</code>, <code>0.0</code>, <code>""</code>, <code>[]</code>, <code>()</code>, <code>{}</code>, <code>None</code><br>• Returns <code>True</code> for all other values</td>
+<td>Boolean (<code>bool</code>)</td>
+</tr>
+<tr>
+<td><code>list()</code></td>
+<td>• Any iterable: <code>str</code>, <code>tuple</code>, <code>set</code>, <code>dict</code> (keys only), <code>range</code>, etc.<br>• Empty call <code>list()</code> creates empty list</td>
+<td>List (<code>list</code>)</td>
+</tr>
+<tr>
+<td><code>tuple()</code></td>
+<td>• Any iterable: <code>str</code>, <code>list</code>, <code>set</code>, <code>dict</code> (keys only), <code>range</code>, etc.<br>• Empty call <code>tuple()</code> creates empty tuple</td>
+<td>Tuple (<code>tuple</code>)</td>
+</tr>
+<tr>
+<td><code>set()</code></td>
+<td>• Any iterable with hashable elements: <code>str</code>, <code>list</code>, <code>tuple</code>, etc.<br>• Empty call <code>set()</code> creates empty set</td>
+<td>Set (<code>set</code>)</td>
+</tr>
+<tr>
+<td><code>dict()</code></td>
+<td>• Another <code>dict</code><br>• Iterable of key-value pairs (e.g., <code>[("a", 1), ("b", 2)]</code>)<br>• Keyword arguments</td>
+<td>Dictionary (<code>dict</code>)</td>
+</tr>
+<tr>
+<td><code>complex()</code></td>
+<td>• <code>int</code>, <code>float</code><br>• <code>str</code> (format: <code>"3+4j"</code> or <code>"5j"</code>)<br>• Two numbers: <code>complex(real, imag)</code></td>
+<td>Complex number (<code>complex</code>)</td>
+</tr>
+</tbody>
+</table>
+        <div class="info-box key-terms-box">
+            <div class="box-title">
+                <span class="box-icon"></span>
+                KEY TERMS
+            </div>
+            <div class="box-content">
+                <p><strong>Data Types</strong>: Categories that define what kind of value a variable can hold and what operations can be performed on it. Python&#x27;s main built-in types include integers, floats, strings, booleans, lists, tuples, dictionaries, and sets.<br><br><strong>Typecasting</strong>: Converting a value from one data type to another, such as <code>int(&quot;42&quot;)</code> to convert a string to an integer, or <code>str(3.14)</code> to convert a float to a string.<br><br><strong>Boolean</strong>: A data type with only two possible values: <code>True</code> or <code>False</code>. Used for logical operations and conditional statements.<br><br><strong>Integers</strong>: Whole numbers without decimal points, such as <code>42</code>, <code>-7</code>, or <code>0</code>. Python integers have unlimited precision.<br><br><strong>Floats</strong>: Numbers with decimal points, such as <code>3.14</code>, <code>-0.5</code>, or <code>2.0</code>. Short for &quot;floating-point numbers&quot;.<br><br><strong>Strings</strong>: Sequences of characters enclosed in quotes, such as <code>&quot;hello&quot;</code>. Used to represent text.<br><br><strong>F-strings</strong>: Formatted string that allow embedding variables inside strings using curly braces, such as <code>f&quot;The answer is {x + y}&quot;</code>. They start with an <code>f</code> prefix before the opening quote.</p>
+            </div>
         </div>
         
         <div class="info-box tip-box">
@@ -1396,6 +1460,10 @@ except Exception as e:
         });
         
         console.log("All code blocks initialised successfully");
+
+        // Set flag to indicate Pyodide is fully ready
+        window.pyodideReady = true;
+        console.log("Pyodide fully ready");
         
     } catch (error) {
         console.error("Failed to initialise Pyodide:", error);

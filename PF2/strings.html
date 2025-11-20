@@ -226,7 +226,7 @@ print(f&quot;Are these genes equivalent? \n\n{gene1 == gene2}&quot;)</textarea>
             </div>
             <div id="code-cell-110-output" class="output"></div>
         </div>
-        <h4>Indexing</h4><p>Much like a list or tuple, <strong>strings can be indexed</strong>, allowing the use of operations such as <strong>slicing</strong>. Each character is an <strong>ordered item</strong> in the string, exactly as each element is within a list. In fact, the same basic slicing operations that we previously covered in the lists section of this material, can be applied to strings.</p>
+        <h4>Indexing</h4><p>Much like a list or tuple, <strong>strings can be indexed</strong>, allowing the use of operations such as <strong>slicing</strong>. Each character is an <strong>ordered item</strong> in the string, exactly as each item is within a list. In fact, the same basic slicing operations that we previously covered in the lists section of this material, can be applied to strings.</p>
         <div class="code-area">
             <div class="code-container code-fixed">
                 <textarea id="code-cell-111">rna_seq = &quot;AUGGGCAGUCCGUAA&quot;
@@ -561,7 +561,7 @@ print(clean_sequence)   </textarea>
                 <p>In the above code we have chained two methods together, a common sight in Python. Here the first method will execute returning a new object, which in turn is acted upon by the next method. Chaining of methods only works for those thAT return a object, as this is what the subsequent method is working on.</p>
             </div>
         </div>
-        <p>The <code>.split()</code> method is also particularly useful when dealing with FASTA files that have varying seperators.<br><br>In the example below, we split the sequence header on the <code>|</code> character, assigning each split section of the string to the element of a new list. We can then use indexing to retrieve just the accession number, for instance, from this list, allowing us to swiftly retrieve just the information we are looking for, from a string, using minimal code.</p>
+        <p>The <code>.split()</code> method is also particularly useful when dealing with FASTA files that have varying seperators.<br><br>In the example below, we split the sequence header on the <code>|</code> character, assigning each split section of the string to the item of a new list. We can then use indexing to retrieve just the accession number, for instance, from this list, allowing us to swiftly retrieve just the information we are looking for, from a string, using minimal code.</p>
         <div class="code-area">
             <div class="code-container code-fixed">
                 <textarea id="code-cell-128"># Parsing a FASTA header
@@ -655,10 +655,10 @@ sample_id = &quot;gilestro_024&quot;</textarea>
                 <div class="module-body">
                     <div class="module-section">
                         <h3>Converting strings into other data structures</h3>
-                        <h4>Lists</h4><p>Converting a string to a <strong>list</strong> can be extremely useful when you need to manipulate individual characters or when you want to analyse the frequency of specific elements. The <code>split()</code> method is particularly powerful for parsing structured data, whilst the <code>list()</code> class converts each character into a separate list element.</p>
+                        <h4>Lists</h4><p>Converting a string to a <strong>list</strong> can be extremely useful when you need to manipulate individual characters or when you want to analyse the frequency of specific items. The <code>split()</code> method is particularly powerful for parsing structured data, whilst the <code>list()</code> class converts each character into a separate list item.</p>
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-130"># Convert each character to a list element
+                <textarea id="code-cell-130"># Convert each character to a list item
 dna_sequence = &quot;ATCGATCG&quot;
 nucleotides = list(dna_sequence)
 print(f&quot;Individual nucleotides: {nucleotides}\n&quot;)
@@ -721,7 +721,7 @@ hydrophobic = [&#x27;A&#x27;, &#x27;I&#x27;, &#x27;L&#x27;, &#x27;M&#x27;, &#x27
 <tbody>
 <tr>
 <td><code>list(string)</code></td>
-<td>Convert each character to list element</td>
+<td>Convert each character to list item</td>
 <td><code>list("ATCG")</code> → <code>['A', 'T', 'C', 'G']</code></td>
 </tr>
 <tr>

@@ -119,7 +119,7 @@
                 </div>
                     </div>
                     <h3>Introduction</h3>
-                    <p>Another built-in Python collection type is the <strong>set</strong>. Unlike lists and tuples, sets are <strong>unordered</strong> collections of <strong>unique</strong> items.<br><br>Let&#x27;s break down those two characteristics:<br><ul class="nested-list"><li><strong>Unordered</strong>: Items in a set <em>do not have a defined order or index</em>; you cannot access elements by position</li><br><li><strong>Unique</strong>: A set <em>cannot contain duplicate</em> values; each element must be unique</li></ul>These properties make sets particularly useful for <strong>efficiently checking for membership</strong> using the <code>in</code> operator, <strong>removing duplicates</strong> from other collections, and <strong>performing mathematical set operations</strong> that find the <strong>common</strong> or <strong>different items</strong> between sets.</p><p>See here for the documentation of <a href="https://docs.python.org/3/tutorial/datastructures.html#sets"><code>sets</code></a> from Python.org.</p>
+                    <p>Another built-in Python collection type is the <strong>set</strong>. Unlike lists and tuples, sets are <strong>unordered</strong> collections of <strong>unique</strong> items.<br><br>Let&#x27;s break down those two characteristics:<br><ul class="nested-list"><li><strong>Unordered</strong>: Items in a set <em>do not have a defined order or index</em>; you cannot access items by position</li><br><li><strong>Unique</strong>: A set <em>cannot contain duplicate</em> values; each item must be unique</li></ul>These properties make sets particularly useful for <strong>efficiently checking for membership</strong> using the <code>in</code> operator, <strong>removing duplicates</strong> from other collections, and <strong>performing mathematical set operations</strong> that find the <strong>common</strong> or <strong>different items</strong> between sets.</p><p>See here for the documentation of <a href="https://docs.python.org/3/tutorial/datastructures.html#sets"><code>sets</code></a> from Python.org.</p>
                 </div>
             </div>
             
@@ -222,14 +222,14 @@ print(type(empty_set))</textarea>
                 <div class="module-body">
                     <div class="module-section">
                         <h3>Mutability</h3>
-                        <p>Like lists, sets are <strong>mutable</strong>, meaning that you can add or remove elements, after they are instantiated (created).<br><br>As with lists, set objects have their own built-in, associated methods. One of these is <code>.add</code>, allowing us to add new items to an existing set.</p>
+                        <p>Like lists, sets are <strong>mutable</strong>, meaning that you can add or remove items, after they are instantiated (created).<br><br>As with lists, set objects have their own built-in, associated methods. One of these is <code>.add</code>, allowing us to add new items to an existing set.</p>
         <div class="code-area">
             <div class="code-container code-fixed">
                 <textarea id="code-cell-88"># Instantiate a set:
 gene_set = {&#x27;geneA&#x27;, &#x27;geneB&#x27;, &#x27;geneC&#x27;}
 print(&quot;Original set:&quot;, gene_set)
 
-# Add new elements to this set:
+# Add new items to this set:
 
 gene_set.add(&#x27;geneD&#x27;) # Use the .add() method
 print(&quot;After adding geneD:&quot;, gene_set)</textarea>
@@ -256,10 +256,10 @@ print(&quot;After attempting to add geneA again:&quot;, gene_set)</textarea>
                         <p>Unique items in a set can be removed using <code>.remove()</code> or <code>.discard()</code>:</p>
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-90">gene_set.remove(&#x27;geneB&#x27;)                    # Use .remove() to remove a specified element.
+                <textarea id="code-cell-90">gene_set.remove(&#x27;geneB&#x27;)                    # Use .remove() to remove a specified item.
 print(&quot;After removing geneB:&quot;, gene_set)
 
-# .discard() won&#x27;t raise an error if the element doesn&#x27;t exist:
+# .discard() won&#x27;t raise an error if the item doesn&#x27;t exist:
 gene_set.discard(&#x27;geneZ&#x27;)                   # This doesn&#x27;t exist, but no error
 
 print(&quot;After attempting to discard geneZ:&quot;, gene_set)</textarea>
@@ -269,7 +269,7 @@ print(&quot;After attempting to discard geneZ:&quot;, gene_set)</textarea>
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-91"># Practice adding and removing elements from sets</textarea>
+                <textarea id="code-cell-91"># Practice adding and removing items from sets</textarea>
             </div>
             <button id="run-code-cell-91" class="run-button">Run Code</button>
             <div id="code-cell-91-output" class="output"></div>
@@ -310,7 +310,7 @@ print(&quot;After attempting to discard geneZ:&quot;, gene_set)</textarea>
                 <div class="module-body">
                     <div class="module-section">
                         <h3>Indexing</h3>
-                        <p>Because sets are unordered, they <strong>do not support indexing or slicing</strong> like lists do. Attempting to access elements by position will raise a <code>TypeError</code>:</p>
+                        <p>Because sets are unordered, they <strong>do not support indexing or slicing</strong> like lists do. Attempting to access items by position will raise a <code>TypeError</code>:</p>
         <div class="code-area">
             <div class="code-container code-editor">
                 <textarea id="code-cell-93"># Run this cell to see the error: TypeError
@@ -319,7 +319,7 @@ gene = gene_set[0]</textarea>
             <button id="run-code-cell-93" class="run-button">Run Code</button>
             <div id="code-cell-93-output" class="output"></div>
         </div>
-        <p>However, you can still check for an element&#x27;s membership using the <code>in</code> operator:</p>
+        <p>However, you can still check for an item&#x27;s membership using the <code>in</code> operator:</p>
         <div class="code-area">
             <div class="code-container code-fixed">
                 <textarea id="code-cell-94">print(&#x27;geneA&#x27; in gene_set)
@@ -346,7 +346,7 @@ print(&#x27;geneZ&#x27; in gene_set)</textarea>
                 <div class="module-body">
                     <div class="module-section">
                         <h3>Set operations</h3>
-                        <p>Sets provide fast and expressive ways to <em>compare</em> collections. This is particularly powerful in biological data analysis, where we often need to compare different datasets to one another in order to find overlaps, or identify unique elements.<br><br>In the code cell below, we will use set operations to compare differentially-expressed genes from two experiments:</p>
+                        <p>Sets provide fast and expressive ways to <em>compare</em> collections. This is particularly powerful in biological data analysis, where we often need to compare different datasets to one another in order to find overlaps, or identify unique items.<br><br>In the code cell below, we will use set operations to compare differentially-expressed genes from two experiments:</p>
         <div class="code-area">
             <div class="code-container code-fixed">
                 <textarea id="code-cell-95"># Example: Comparing differentially expressed genes from two experiments
@@ -369,7 +369,7 @@ print(&quot;Experiment 2 genes:&quot;, experiment2_genes)</textarea>
                 allowfullscreen>
             </iframe>
         </div>
-        <p>We can also make use of the <code>.union()</code> method to identify all elements <em>unique</em> to multiple sets. The method returns a brand new set, containing only unique elements. This can be used on two or more sets.<br><br>In this example, let&#x27;s identify genes unique to each of the two experiments:</p>
+        <p>We can also make use of the <code>.union()</code> method to identify all items <em>unique</em> to multiple sets. The method returns a brand new set, containing only unique items. This can be used on two or more sets.<br><br>In this example, let&#x27;s identify genes unique to each of the two experiments:</p>
         <div class="code-area">
             <div class="code-container code-fixed">
                 <textarea id="code-cell-96">all_found_genes = experiment1_genes.union(experiment2_genes)
@@ -380,7 +380,7 @@ print(f&quot;\nType of object returned by .union():    {type(all_found_genes)}&q
             </div>
             <div id="code-cell-96-output" class="output"></div>
         </div>
-        <p>The <code>.intersection()</code> method finds elements common to two or more sets.<br><br>In the code cell below, we are going to create a third set, with one gene that is common to the two sets created, previously.</p>
+        <p>The <code>.intersection()</code> method finds items common to two or more sets.<br><br>In the code cell below, we are going to create a third set, with one gene that is common to the two sets created, previously.</p>
         <div class="code-area">
             <div class="code-container code-fixed">
                 <textarea id="code-cell-97">experiment3_genes = {&#x27;EGFR&#x27;, &#x27;AKT1&#x27;, &#x27;PTEN&#x27;, &#x27;VEGFA&#x27;, &#x27;BRCA2&#x27;, &#x27;MAPK3&#x27;, &#x27;KRAS&#x27;} # Let&#x27;s make a third set.
@@ -403,7 +403,7 @@ print(f&quot;\nType of object returned by .intersection():   {type(common_genes)
                 <p>For comparing multiple sets using these methods, the syntax is to separate them using <strong>commas</strong>, inside the round parentheses of the method being applied.</p>
             </div>
         </div>
-        <p>In order to find genes unique to one set only, we can use the set method <code>.difference()</code>. The set to which the method is appended, is the set in whose elements we are searching for unique items. As with all the methods discussed, a new set is returned containing the unique elements.</p>
+        <p>In order to find genes unique to one set only, we can use the set method <code>.difference()</code>. The set to which the method is appended, is the set in whose items we are searching for unique items. As with all the methods discussed, a new set is returned containing the unique items.</p>
         <div class="code-area">
             <div class="code-container code-fixed">
                 <textarea id="code-cell-98">unique_to_exp1 = experiment1_genes.difference(experiment2_genes, experiment3_genes)
@@ -412,7 +412,7 @@ print(&quot;Unique to Experiment 1:&quot;, unique_to_exp1)</textarea>
             </div>
             <div id="code-cell-98-output" class="output"></div>
         </div>
-        <h4>Using .symmetric_difference() and ^</h4><p>In order to return a new set containing either of the elements in <strong>two</strong> sets, but not in both, we can use <code>.symmetric_difference()</code>. Explicitly, this returns <strong>everything <em>except</em> what is shared</strong> between two sets.</p>
+        <h4>Using .symmetric_difference() and ^</h4><p>In order to return a new set containing either of the items in <strong>two</strong> sets, but not in both, we can use <code>.symmetric_difference()</code>. Explicitly, this returns <strong>everything <em>except</em> what is shared</strong> between two sets.</p>
         <div class="code-area">
             <div class="code-container code-fixed">
                 <textarea id="code-cell-99">exclusive_genes = experiment1_genes.symmetric_difference(experiment2_genes)
@@ -463,25 +463,25 @@ print(&quot;Symmetric difference using ^:&quot;, experiment1_genes ^ experiment2
 <td><strong>Union</strong></td>
 <td><code>set1.union(set2)</code></td>
 <td><code>set1 | set2</code></td>
-<td>Combines all unique elements from both sets. Both forms allow comparison across multiple sets (e.g. <code>set1.union(set2, set3)</code> or <code>set1 | set2 | set3</code>).</td>
+<td>Combines all unique items from both sets. Both forms allow comparison across multiple sets (e.g. <code>set1.union(set2, set3)</code> or <code>set1 | set2 | set3</code>).</td>
 </tr>
 <tr>
 <td><strong>Intersection</strong></td>
 <td><code>set1.intersection(set2)</code></td>
 <td><code>set1 & set2</code></td>
-<td>Returns only elements present in <em>both</em> sets. Both forms support multiple sets (e.g. <code>set1 & set2 & set3</code>).</td>
+<td>Returns only items present in <em>both</em> sets. Both forms support multiple sets (e.g. <code>set1 & set2 & set3</code>).</td>
 </tr>
 <tr>
 <td><strong>Difference</strong></td>
 <td><code>set1.difference(set2)</code></td>
 <td><code>set1 - set2</code></td>
-<td>Returns elements found in the first set but <strong>not</strong> in the second. Both forms support chaining across multiple sets.</td>
+<td>Returns items found in the first set but <strong>not</strong> in the second. Both forms support chaining across multiple sets.</td>
 </tr>
 <tr>
 <td><strong>Symmetric difference</strong></td>
 <td><code>set1.symmetric_difference(set2)</code></td>
 <td><code>set1 ^ set2</code></td>
-<td>Returns elements that are <strong>in either set but not both</strong>. The <code>.symmetric_difference()</code> method only works with two sets; the operator <code>^</code> can be <strong>chained</strong> to compare more than two (e.g. <code>set1 ^ set2 ^ set3</code>).</td>
+<td>Returns items that are <strong>in either set but not both</strong>. The <code>.symmetric_difference()</code> method only works with two sets; the operator <code>^</code> can be <strong>chained</strong> to compare more than two (e.g. <code>set1 ^ set2 ^ set3</code>).</td>
 </tr>
 </tbody>
 </table>
@@ -531,7 +531,7 @@ population_B_resistance = {&#x27;blaCTX&#x27;, &#x27;aac&#x27;, &#x27;tetA&#x27;
                 <div class="module-body">
                     <div class="module-section">
                         <h3>Summary</h3>
-                        <p>In this section of Python Fundamentals 2, we explored Python <strong>sets</strong> — collections of unique, unordered elements that are ideal for comparing, combining and filtering data. We learned how to create sets, add and remove items, and perform key operations such as <strong>union</strong>, <strong>intersection</strong>, <strong>difference</strong>, and <strong>symmetric difference</strong>. We also examined both the <strong>method syntax</strong> (e.g. <code>.union()</code>, <code>.intersection()</code>) and the <strong>operator syntax</strong> (e.g. <code>|</code>, <code>&amp;</code>, <code>-</code>, <code>^</code>), noting subtle differences in how they behave. Together, these tools make sets a powerful structure for handling distinct data and performing fast membership or comparison tasks in Python.</p>
+                        <p>In this section of Python Fundamentals 2, we explored Python <strong>sets</strong> — collections of unique, unordered items that are ideal for comparing, combining and filtering data. We learned how to create sets, add and remove items, and perform key operations such as <strong>union</strong>, <strong>intersection</strong>, <strong>difference</strong>, and <strong>symmetric difference</strong>. We also examined both the <strong>method syntax</strong> (e.g. <code>.union()</code>, <code>.intersection()</code>) and the <strong>operator syntax</strong> (e.g. <code>|</code>, <code>&amp;</code>, <code>-</code>, <code>^</code>), noting subtle differences in how they behave. Together, these tools make sets a powerful structure for handling distinct data and performing fast membership or comparison tasks in Python.</p>
                     </div>
                 </div>
             </div>

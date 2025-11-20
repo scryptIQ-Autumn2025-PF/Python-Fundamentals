@@ -214,7 +214,7 @@ coreceptors[0] = &#x27;new&#x27;</textarea>
                 <div class="module-body">
                     <div class="module-section">
                         <h3>Accessing a Tuple</h3>
-                        <p>The principles of indexing and slicing a tuple are identical to those of a list. You can access elements using positive and negative indexing, and create slices using the same <code>[start:end]</code> notation.</p>
+                        <p>The principles of indexing and slicing a tuple are identical to those of a list. You can access items using positive and negative indexing, and create slices using the same <code>[start:end]</code> notation.</p>
         <div class="code-area">
             <div class="code-container code-fixed">
                 <textarea id="code-cell-64"># DNA bases tuple
@@ -326,7 +326,7 @@ print(type(behaviours))</textarea>
             </div>
             <div id="code-cell-69-output" class="output"></div>
         </div>
-        <p>And now lets create a new tuple object, and typecast the items in the list into the elements of a new tuple, using the <code>tuple()</code> class.</p>
+        <p>And now lets create a new tuple object, and typecast the items in the list into the items of a new tuple, using the <code>tuple()</code> class.</p>
         <div class="code-area">
             <div class="code-container code-fixed">
                 <textarea id="code-cell-70"># So we make it a tuple to prevent any accidental modification
@@ -338,7 +338,7 @@ print(type(behaviours_tuple))</textarea>
             </div>
             <div id="code-cell-70-output" class="output"></div>
         </div>
-        <p>Experiment for yourself in the code cell below, typecasting the list into a tuple object.</p>
+        <p>Experiment for yourself in the code cell below, by typecasting the list <code>enzyme_list</code> into a tuple.</p>
         <div class="code-area">
             <div class="code-container code-editor">
                 <textarea id="code-cell-71"># Convert a list of enzyme names to a tuple
@@ -455,7 +455,7 @@ print(mixed_tuple)</textarea>
                 KEY TERMS
             </div>
             <div class="box-content">
-                <p><strong>Packing</strong>: The process of combining multiple values into a single tuple, either explicitly with parentheses <code>(a, b, c)</code> or implicitly with comma separation <code>a, b, c</code>. Python automatically interprets comma-separated values as a tuple.<br><br><strong>Unpacking</strong>: The process of extracting values from a tuple and assigning them to individual variables, making code more readable and allowing work with individual elements.</p>
+                <p><strong>Packing</strong>: The process of combining multiple values into a single tuple, either explicitly with parentheses <code>(a, b, c)</code> or implicitly with comma separation <code>a, b, c</code>. Python automatically interprets comma-separated values as a tuple.<br><br><strong>Unpacking</strong>: The process of extracting values from a tuple and assigning them to individual variables, making code more readable and allowing work with individual items.</p>
             </div>
         </div>
         <p>Let&#x27;s demonstrate packing in this cell, creating a new tuple called <code>my_tuple</code>, in the process:</p>
@@ -500,7 +500,7 @@ print(dimensions,          # Our new tuple.
             </div>
             <div id="code-cell-79-output" class="output"></div>
         </div>
-        <p>As we can see, our tuple contains 6 elements (or items). Let&#x27;s try to unpack the first 3, and see what happens:</p>
+        <p>As we can see, our tuple contains 6 items (or elements). Let&#x27;s try to unpack the first 3, and see what happens:</p>
         <div class="code-area">
             <div class="code-container code-editor">
                 <textarea id="code-cell-80">x, y, z = dimensions
@@ -510,7 +510,7 @@ print(&quot;First 3 dimensions:&quot;, x, y, z)</textarea>
             <button id="run-code-cell-80" class="run-button">Run Code</button>
             <div id="code-cell-80-output" class="output"></div>
         </div>
-        <p>Python immediately throws a ValueError. When unpacking a <code>tuple</code>, the <strong>number of variables on the left must match the number of elements in the tuple</strong>.</p>
+        <p>Python immediately throws a ValueError. When unpacking a <code>tuple</code>, the <strong>number of variables on the left must match the number of items in the tuple</strong>.</p>
         <div class="info-box note-box">
             <div class="box-title">
                 <span class="box-icon"></span>
@@ -556,7 +556,7 @@ print(&quot;First 3 dimensions:&quot;, x, y, z)</textarea>
                 <div class="module-body">
                     <div class="module-section">
                         <h3>Advanced Unpacking Techniques</h3>
-                        <p>Python also supports more advanced unpacking patterns, including the <code><em></code> operator. The <code></em></code> will collect any remaining items into a list, allowing you to unpack a variable number of elements from a sequence. This is particularly useful when you know some specific positions but want to capture the rest as a group.</p>
+                        <p>Python also supports more advanced unpacking patterns, including the <code><em></code> operator. The <code></em></code> will collect any remaining items into a list, allowing you to unpack a variable number of items from a sequence. This is particularly useful when you know some specific positions but want to capture the rest as a group.</p>
         <div class="code-area">
             <div class="code-container code-fixed">
                 <textarea id="code-cell-82"># Unpacking with the * operator
@@ -570,7 +570,7 @@ print(&#x27;Type of expression levels:&#x27;, type(expression_levels))</textarea
             </div>
             <div id="code-cell-82-output" class="output"></div>
         </div>
-        <p>The <code>*</code> operator captures all remaining elements as a list (not a tuple), making it easy to work with variable-length data.</p>
+        <p>The <code>*</code> operator captures all remaining items as a list (not a tuple), making it easy to work with variable-length data.</p>
         <div class="info-box fact-box">
             <div class="box-title">
                 <span class="box-icon"></span>

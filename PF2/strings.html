@@ -686,15 +686,17 @@ print(f&quot;Data fields: {data_fields}&quot;)</textarea>
             </div>
             <div class="box-content">
                 <p><strong>3.</strong></p>
-                <p>Convert the following amino acid sequence into a list and count how many hydrophobic amino acids (A, I, L, M, F, W, Y, V) it contains.</p>
+                <p>You have a protein sequence given to you (see code cell), count the number of times Leucine (L) appears in the sequence:<ul class="nested-list"><li>use a list method to achieve you aim</li><br><li>do not type &quot;L&quot; directly; use indexing to access &quot;L&quot; from within the nested tuple</li><br><li>create an if/else statement that prints &quot;Multiple leucines present&quot; if there are more than 2, otherwise print &quot;Few leucines present&quot;</li></ul></p>
             </div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-editor">
                 <textarea id="code-cell-131">protein_sequence = &quot;MKWVTFISLLFLFSSAYS&quot;
-hydrophobic = [&#x27;A&#x27;, &#x27;I&#x27;, &#x27;L&#x27;, &#x27;M&#x27;, &#x27;F&#x27;, &#x27;W&#x27;, &#x27;Y&#x27;, &#x27;V&#x27;]
-
+amino_acids = [
+    (&#x27;A&#x27;, &#x27;I&#x27;, &#x27;L&#x27;, &#x27;M&#x27;, &#x27;F&#x27;, &#x27;W&#x27;, &#x27;Y&#x27;, &#x27;V&#x27;),  # Hydrophobic
+    (&#x27;R&#x27;, &#x27;N&#x27;, &#x27;D&#x27;, &#x27;C&#x27;, &#x27;Q&#x27;, &#x27;E&#x27;, &#x27;G&#x27;, &#x27;H&#x27;, &#x27;K&#x27;, &#x27;P&#x27;, &#x27;S&#x27;, &#x27;T&#x27;)  # Non-hydrophobic
+]
 # Your code here
 </textarea>
             </div>

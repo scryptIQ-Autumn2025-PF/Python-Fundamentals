@@ -53,7 +53,7 @@
                     Online Materials
                     <span class="toggle-icon">▼</span>
                 </div>
-                <ul class="nested-nav expanded" id="expandable-section-3"><li><a href="#navigating-the-webpages">Navigating the webpages</a></li><li><a href="#pyodide">Pyodide</a></li><li><a href="#pyodide-issues">Pyodide Issues</a></li>
+                <ul class="nested-nav expanded" id="expandable-section-3"><li><a href="#navigating-the-webpages">Navigating the webpages</a></li><li><a href="#downloading">Downloading</a></li><li><a href="#pyodide">Pyodide</a></li><li><a href="#pyodide-issues">Pyodide Issues</a></li>
                 </ul>
             </li><li><a href="./live-lectures.html">Live Lectures & Drop-in Sessions</a></li><li><a href="./course-feedback.html">Submitting course feedback</a></li><li><a href="./assignment-submission.html">Assignment submission</a></li><li><a href="./assignment-feedback.html">Assignment Feedback</a></li><li><a href="./tutor-support.html">Tutor Support Sessions</a></li><li><a href="./ai-as-a-tool.html">AI as a Tool</a></li><li><a href="./final-project.html">Final Project</a></li><li><a href="./contact-us.html">Contact us</a></li><li><a href="./feedback.html">Feedback</a></li>
         </ul>
@@ -137,6 +137,15 @@
             </div>
         </div>
         
+                    </div>
+                </div>
+            </div>
+            
+            <div class="module-card" id="downloading">
+                <div class="module-body">
+                    <div class="module-section">
+                        <h3>Downloading</h3>
+                        <p>Every lesson, including the Orientation and Handbook, can be downloaded for you to keep. We will give you access to the web hosted materials for <strong>2 years</strong> from when you first start the course, however after this time we will remove the GitHub organisation hosting the content.<br><br>If you wish to keep the material beyond this time point you can download the online materials as both a <strong>PDF</strong>, which will be static, and as a <strong>Jupyter Notebook</strong>. With the notebook you can run the code, recreating the content you see in the web browser. This is also recommended for when you want to complete the practice exercises given in the materials locally, rather than in the browser (<em>see below</em>). Doing so in your own copy means you can save the work as you go and add notes to the materials for future revision.</p><h4>How to download the materials:</h4><p>In the sidebar, click on <strong>resources</strong>. Doing so will reveal a sub-menu containing <em>Glossary</em>, <em>Downloads</em>, and <em>Handbook</em>. Click on <strong>Downloads</strong>.</p><p><img src="./images/downloads-one.png" alt="Finding Downloads" class="notebook-image"></p><p>Once you have clicked on <strong>Downloads</strong> you will be taken to a new page which will look like below. Clicking either <strong>Download All PDFs</strong> or <strong>Download All Notebooks</strong> will download either the pdfs or notebooks respectively. The files will be in a zipped folder that will unzip when double clicked.</p><p><img src="./images/downloads-two.png" alt="Picking a download" class="notebook-image"></p>
                     </div>
                 </div>
             </div>
@@ -299,8 +308,23 @@ os.makedirs('./data', exist_ok=True)
                 
                 // Add loading code for each file
                 for (const file of lessonFiles) {
-                    pythonCode += `
-# Load ${file.filename}
+                    if (file.is_binary) {
+                        // Binary files (images, etc.) - use bytes
+                        pythonCode += `
+# Load ${file.filename} (binary)
+try:
+    response = await pyfetch("${file.url}")
+    content = await response.bytes()
+    with open('./data/${file.filename}', 'wb') as f:
+        f.write(bytes(content))
+    print("Loaded: ${file.filename}")
+except Exception as e:
+    print(f"Could not load ${file.filename}: {e}")
+`;
+                    } else {
+                        // Text files (CSV, etc.) - use string
+                        pythonCode += `
+# Load ${file.filename} (text)
 try:
     response = await pyfetch("${file.url}")
     content = await response.string()
@@ -310,6 +334,7 @@ try:
 except Exception as e:
     print(f"Could not load ${file.filename}: {e}")
 `;
+                    }
                 }
                 
                 await pyodide.runPythonAsync(pythonCode);
@@ -377,12 +402,14 @@ except Exception as e:
             if (!code) continue;
             
             console.log(`Executing hidden code block: ${textarea.id}`);
+            console.log(`Hidden code content: ${code.substring(0, 100)}...`);
             const result = await executePythonCode(code);
             
             if (!result.success) {
                 console.error(`Error in hidden code block ${textarea.id}:`, result.output);
             } else {
                 console.log(`Hidden code block ${textarea.id} executed successfully`);
+                console.log(`Result: ${result.output}`);
             }
         }
 
@@ -582,7 +609,8 @@ except Exception as e:
                             });
                     } else if (trimmedOutput.startsWith('<!DOCTYPE') || 
                                trimmedOutput.startsWith('<html') ||
-                               trimmedOutput.startsWith('<div')) {
+                               trimmedOutput.startsWith('<div') ||
+                               trimmedOutput.startsWith('<img')) {
                         outputElement.innerHTML = result.output;
                     } else {
                         outputElement.textContent = result.output;

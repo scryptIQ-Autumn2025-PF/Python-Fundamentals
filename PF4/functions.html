@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- MathJax for mathematical notation -->
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+            processEscapes: true
+        },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    
     <!-- Pyodide and CodeMirror -->
     <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
@@ -316,22 +331,7 @@ numbers = [1, 45, 22, 66, 33, 989, 120, 125, 352, 64646, 77, 88, 12, 15, 775, 33
 
 def odd_even(numbers):
 
-    even_numbers = []
-    odd_numbers = []
-
-    for number in numbers:
-
-        if number % 2 == 0:
-
-            even_numbers.append(number)
-        
-        else:
-
-            odd_numbers.append(number)
-    
-    odd_even_dict = {&quot;Even numbers&quot; : even_numbers, &quot;Odd numbers&quot; : odd_numbers}
-
-    return odd_even_dict
+    # Write the function here given the step
 </textarea>
             </div>
             <button id="run-code-cell-9" class="run-button">Run Code</button>
@@ -340,9 +340,7 @@ def odd_even(numbers):
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-10">dictionary = odd_even(numbers)
-
-dictionary</textarea>
+                <textarea id="code-cell-10"># Call your function here</textarea>
             </div>
             <button id="run-code-cell-10" class="run-button">Run Code</button>
             <div id="code-cell-10-output" class="output"></div>
@@ -658,7 +656,7 @@ print(f&quot;{dna_fragments}\n\n {type(dna_fragments)}&quot;)</textarea>
 
     return codon_count, gc_percentage</textarea>
             </div>
-            <div id="code-cell-20-output" class="output"></div>
+            <div id="code-cell-20-output" class="output" style="display: none;"></div>
         </div>
         <p>Once defined, we can call this function to produce two outputs, as specified: <code>codon_count</code> and <code>gc_percentage</code>. We can then unpack this into two variables, and print these in our print statement.</p>
         <div class="code-area">
@@ -1024,6 +1022,11 @@ except Exception as e:
             // Small delay to show progression
             await new Promise(resolve => setTimeout(resolve, 100));
         }
+        
+        // Set flag to indicate all FIXED cells have been executed
+        // This is used by PDF generation to ensure all outputs are ready
+        window.allCellsExecuted = true;
+        console.log("All FIXED cells executed successfully");
         
         // Setup all editable code blocks (but don't execute them)
         document.querySelectorAll('.code-editor textarea').forEach((textarea) => {
